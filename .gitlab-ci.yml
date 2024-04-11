@@ -13,9 +13,11 @@ services:
   - docker:dind  # Use Docker-in-Docker for build and push stages
 
 build:
+  only:
+    - master
   stage: build
   script:
-    - dotnet publish --configuration Release /output  # Publish app to output folder
+    # - dotnet publish --configuration Release /output  # Publish app to output folder
     - docker build -t $IMAGE_NAME $DOCKERFILE_PATH  # Build image using dynamic name
 
 push:
@@ -26,5 +28,5 @@ push:
     - docker login registry.gitlab.com -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD}
     - docker push $IMAGE_NAME
 
-only:
-  - master  # Run pipeline only for pushes to the master branch (adjust as needed)
+# only:
+#   - master  # Run pipeline only for pushes to the master branch (adjust as needed)
