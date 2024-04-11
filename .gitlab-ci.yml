@@ -2,7 +2,7 @@ stages:
   - build
   - push
 
-image: microsoft/dotnet:8.0-x64  # Base image for building .NET 8 app
+image: mcr.microsoft.com/dotnet/aspnet:8.0  # Base image for building .NET 8 app
 
 variables:
   DOTNET_VERSION: 8.0  # Adjust if using a different .NET version
@@ -17,16 +17,19 @@ build:
     - master
   stage: build
   script:
+    - echo "Start build"
     # - dotnet publish --configuration Release /output  # Publish app to output folder
     - docker build -t $IMAGE_NAME $DOCKERFILE_PATH  # Build image using dynamic name
+    - echo "End build"
 
 push:
   stage: push
   dependencies:
     - build  # Wait for build stage to complete
   script:
+    - echo "Start push"
     - docker login registry.gitlab.com -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD}
     - docker push $IMAGE_NAME
-
+    - echo "Start push"
 # only:
 #   - master  # Run pipeline only for pushes to the master branch (adjust as needed)
