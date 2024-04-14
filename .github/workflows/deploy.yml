@@ -22,4 +22,13 @@ jobs:
 
     - name: Push the image to Docker Hub
       run: docker push tritx/base-admin:latest
+    
+    - name: Pull the image to VM Digital Ocean
+      uses: appleboy/ssh-action@v1.0.0
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        key: ${{ secrets.SSH_KEY }}
+        script: | 
+          docker pull ${{ secrets.DOCKERHUB_USERNAME }}/base-admin:latest
 
