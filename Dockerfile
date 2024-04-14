@@ -15,7 +15,7 @@ COPY ["src/Web/Web.csproj", "src/Web/"]
 COPY ["src/Application/Application.csproj", "src/Application/"]
 COPY ["src/Domain/Domain.csproj", "src/Domain/"]
 COPY ["src/Infrastructure/Infrastructure.csproj", "src/Infrastructure/"]
-RUN dotnet restore "./src/Web/./Web.csproj"
+RUN dotnet restore "src/Web/./Web.csproj"
 COPY . .
 WORKDIR "/src/src/Web"
 RUN dotnet build "./Web.csproj" -c $BUILD_CONFIGURATION -o /app/build
