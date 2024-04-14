@@ -24,11 +24,14 @@ jobs:
       run: docker push tritx/base-admin:latest
     
     - name: Pull the image to VM Digital Ocean
-      uses: appleboy/ssh-action@v1.0.0
+      uses: appleboy/ssh-action@v1.0.3
       with:
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USERNAME }}
         key: ${{ secrets.SSH_KEY }}
         script: | 
           docker pull ${{ secrets.DOCKERHUB_USERNAME }}/base-admin:latest
+          docker stop base-admin || true
+          docker rm base-admin || true
+          docker run -d -p 1998:8080 --name base-admin ${{ secrets.DOCKERHUB_USERNAME }}/base-admin:latest
 
