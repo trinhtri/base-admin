@@ -33,6 +33,12 @@ public static class DependencyInjection
 
         services.AddScoped<ApplicationDbContextInitialiser>();
 
+        services.AddCors(options => {
+            options.AddPolicy("CorsPolicy", policy => {
+                policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("*");
+            });
+        });
+
         services.AddAuthentication()
             .AddBearerToken(IdentityConstants.BearerScheme);
 
