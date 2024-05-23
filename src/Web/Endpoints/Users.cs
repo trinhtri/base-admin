@@ -1,6 +1,6 @@
-﻿using Thoc.Infrastructure.Identity;
+﻿using Base.Domain.Entities;
 
-namespace Thoc.Web.Endpoints;
+namespace Base.Web.Endpoints;
 
 public class Users : EndpointGroupBase
 {

@@ -5,6 +5,7 @@ using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Thoc.Domain.Entities;
 
 namespace Thoc.Application.FunctionalTests;
 

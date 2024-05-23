@@ -1,9 +1,9 @@
-﻿using Thoc.Domain.Common;
+﻿using Base.Domain.Common;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 
-namespace Thoc.Infrastructure.Data.Interceptors;
+namespace Base.Infrastructure.Data.Interceptors;
 
 public class DispatchDomainEventsInterceptor : SaveChangesInterceptor
 {

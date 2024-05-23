@@ -1,9 +1,8 @@
 ﻿using Azure.Identity;
-using Thoc.Application.Common.Interfaces;
-using Thoc.Infrastructure.Data;
-using Thoc.Web.Services;
+using Base.Application.Common.Interfaces;
+using Base.Infrastructure.Data;
+using Base.Web.Services;
 using Microsoft.AspNetCore.Mvc;
-
 using NSwag;
 using NSwag.Generation.Processors.Security;
 
@@ -15,7 +14,7 @@ public static class DependencyInjection
     {
         services.AddDatabaseDeveloperPageExceptionFilter();
 
-        services.AddScoped<IUser, CurrentUser>();
+        services.AddScoped<ICurrentUser, CurrentUser>();
 
         services.AddHttpContextAccessor();
 
@@ -47,19 +46,6 @@ public static class DependencyInjection
 
             configure.OperationProcessors.Add(new AspNetCoreOperationSecurityScopeProcessor("JWT"));
         });
-
-        return services;
-    }
-
-    public static IServiceCollection AddKeyVaultIfConfigured(this IServiceCollection services, ConfigurationManager configuration)
-    {
-        var keyVaultUri = configuration["KeyVaultUri"];
-        if (!string.IsNullOrWhiteSpace(keyVaultUri))
-        {
-            configuration.AddAzureKeyVault(
-                new Uri(keyVaultUri),
-                new DefaultAzureCredential());
-        }
 
         return services;
     }

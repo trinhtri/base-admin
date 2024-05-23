@@ -1,6 +1,6 @@
-﻿using ValidationException = Thoc.Application.Common.Exceptions.ValidationException;
+﻿using ValidationException = Base.Application.Common.Exceptions.ValidationException;
 
-namespace Thoc.Application.Common.Behaviours;
+namespace Base.Application.Common.Behaviours;
 
 public class ValidationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
      where TRequest : notnull

@@ -1,19 +1,9 @@
-﻿using Thoc.Domain.Entities;
+﻿namespace Base.Application.Common.Models;
 
-namespace Thoc.Application.Common.Models;
-
-public class LookupDto
+public record LookupDto
 {
-    public int Id { get; init; }
+    public required Guid Id { get; init; }
 
-    public string? Title { get; init; }
+    public required string Title { get; init; }
 
-    private class Mapping : Profile
-    {
-        public Mapping()
-        {
-            CreateMap<TodoList, LookupDto>();
-            CreateMap<TodoItem, LookupDto>();
-        }
-    }
 }

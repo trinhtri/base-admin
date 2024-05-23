@@ -1,4 +1,4 @@
-﻿namespace Thoc.Domain.Enums;
+﻿namespace Base.Domain.Enums;
 
 public enum PriorityLevel
 {

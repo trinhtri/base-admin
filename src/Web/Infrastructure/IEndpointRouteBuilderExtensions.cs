@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace Thoc.Web.Infrastructure;
+namespace Base.Web.Infrastructure;
 
 public static class IEndpointRouteBuilderExtensions
 {

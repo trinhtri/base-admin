@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace Thoc.Web.Infrastructure;
+namespace Base.Web.Infrastructure;
 
 public static class WebApplicationExtensions
 {

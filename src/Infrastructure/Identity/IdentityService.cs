@@ -1,10 +1,10 @@
-using Thoc.Application.Common.Interfaces;
-using Thoc.Application.Common.Models;
+using Base.Application.Common.Interfaces;
+using Base.Application.Common.Models;
+using Base.Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 
-namespace Thoc.Infrastructure.Identity;
+namespace Base.Infrastructure.Identity;
 
 public class IdentityService : IIdentityService
 {

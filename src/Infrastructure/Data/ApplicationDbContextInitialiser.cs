@@ -1,14 +1,12 @@
-﻿using System.Runtime.InteropServices;
-using Thoc.Domain.Constants;
-using Thoc.Domain.Entities;
-using Thoc.Infrastructure.Identity;
+﻿using Base.Domain.Constants;
+using Base.Domain.Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace Thoc.Infrastructure.Data;
+namespace Base.Infrastructure.Data;
 
 public static class InitialiserExtensions
 {
@@ -76,34 +74,15 @@ public class ApplicationDbContextInitialiser
         }
 
         // Default users
-        var administrator = new ApplicationUser { UserName = "administrator@localhost", Email = "administrator@localhost" };
+        var administrator = new ApplicationUser { UserName = "trinhxuantri2210@gmail.com", Email = "trinhxuantri2210@gmail.com" };
 
         if (_userManager.Users.All(u => u.UserName != administrator.UserName))
         {
-            await _userManager.CreateAsync(administrator, "Administrator1!");
+            await _userManager.CreateAsync(administrator, "It@12356");
             if (!string.IsNullOrWhiteSpace(administratorRole.Name))
             {
-                await _userManager.AddToRolesAsync(administrator, new [] { administratorRole.Name });
+                await _userManager.AddToRolesAsync(administrator, new[] { administratorRole.Name });
             }
-        }
-
-        // Default data
-        // Seed, if necessary
-        if (!_context.TodoLists.Any())
-        {
-            _context.TodoLists.Add(new TodoList
-            {
-                Title = "Todo List",
-                Items =
-                {
-                    new TodoItem { Title = "Make a todo list 📃" },
-                    new TodoItem { Title = "Check off the first item ✅" },
-                    new TodoItem { Title = "Realise you've already done two things on the list! 🤯"},
-                    new TodoItem { Title = "Reward yourself with a nice, long nap 🏆" },
-                }
-            });
-
-            await _context.SaveChangesAsync();
         }
     }
 }

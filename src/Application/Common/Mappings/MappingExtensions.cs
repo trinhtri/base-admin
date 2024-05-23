@@ -1,6 +1,6 @@
-﻿using Thoc.Application.Common.Models;
+﻿using Base.Application.Common.Models;
 
-namespace Thoc.Application.Common.Mappings;
+namespace Base.Application.Common.Mappings;
 
 public static class MappingExtensions
 {

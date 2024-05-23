@@ -1,10 +1,10 @@
 ﻿using System.Security.Claims;
 
-using Thoc.Application.Common.Interfaces;
+using Base.Application.Common.Interfaces;
 
-namespace Thoc.Web.Services;
+namespace Base.Web.Services;
 
-public class CurrentUser : IUser
+public class CurrentUser : ICurrentUser
 {
     private readonly IHttpContextAccessor _httpContextAccessor;
 

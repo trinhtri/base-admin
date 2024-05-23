@@ -1,7 +1,7 @@
-﻿using Thoc.Application.Common.Models;
+﻿using Base.Application.Common.Models;
 using Microsoft.AspNetCore.Identity;
 
-namespace Thoc.Infrastructure.Identity;
+namespace Base.Infrastructure.Identity;
 
 public static class IdentityResultExtensions
 {

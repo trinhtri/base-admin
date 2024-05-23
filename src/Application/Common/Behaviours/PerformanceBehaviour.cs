@@ -1,19 +1,19 @@
 ﻿using System.Diagnostics;
-using Thoc.Application.Common.Interfaces;
+using Base.Application.Common.Interfaces;
 using Microsoft.Extensions.Logging;
 
-namespace Thoc.Application.Common.Behaviours;
+namespace Base.Application.Common.Behaviours;
 
 public class PerformanceBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : notnull
 {
     private readonly Stopwatch _timer;
     private readonly ILogger<TRequest> _logger;
-    private readonly IUser _user;
+    private readonly ICurrentUser _user;
     private readonly IIdentityService _identityService;
 
     public PerformanceBehaviour(
         ILogger<TRequest> logger,
-        IUser user,
+        ICurrentUser user,
         IIdentityService identityService)
     {
         _timer = new Stopwatch();

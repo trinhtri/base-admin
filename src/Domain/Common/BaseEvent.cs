@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Thoc.Domain.Common;
+namespace Base.Domain.Common;
 
 public abstract class BaseEvent : INotification
 {

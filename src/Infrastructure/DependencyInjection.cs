@@ -1,8 +1,9 @@
-﻿using Thoc.Application.Common.Interfaces;
-using Thoc.Domain.Constants;
-using Thoc.Infrastructure.Data;
-using Thoc.Infrastructure.Data.Interceptors;
-using Thoc.Infrastructure.Identity;
+﻿using Base.Application.Common.Interfaces;
+using Base.Domain.Constants;
+using Base.Domain.Entities;
+using Base.Infrastructure.Data;
+using Base.Infrastructure.Data.Interceptors;
+using Base.Infrastructure.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
@@ -33,14 +34,16 @@ public static class DependencyInjection
 
         services.AddScoped<ApplicationDbContextInitialiser>();
 
-        services.AddCors(options => {
-            options.AddPolicy("CorsPolicy", policy => {
+        services.AddCors(options =>
+        {
+            options.AddPolicy("CorsPolicy", policy =>
+            {
                 policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("*");
             });
         });
 
         services.AddAuthentication()
-            .AddBearerToken(IdentityConstants.BearerScheme);
+        .AddBearerToken(IdentityConstants.BearerScheme);
 
         services.AddAuthorizationBuilder();
 

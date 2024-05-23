@@ -1,12 +1,6 @@
-﻿using Thoc.Domain.Entities;
-
-namespace Thoc.Application.Common.Interfaces;
+﻿namespace Base.Application.Common.Interfaces;
 
 public interface IApplicationDbContext
 {
-    DbSet<TodoList> TodoLists { get; }
-
-    DbSet<TodoItem> TodoItems { get; }
-
     Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 }

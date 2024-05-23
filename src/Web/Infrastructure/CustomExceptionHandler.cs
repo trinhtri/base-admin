@@ -1,8 +1,8 @@
-﻿using Thoc.Application.Common.Exceptions;
+﻿using Base.Application.Common.Exceptions;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Thoc.Web.Infrastructure;
+namespace Base.Web.Infrastructure;
 
 public class CustomExceptionHandler : IExceptionHandler
 {

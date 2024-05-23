@@ -1,4 +1,4 @@
-﻿namespace Thoc.Domain.Constants;
+﻿namespace Base.Domain.Constants;
 
 public abstract class Policies
 {

@@ -1,4 +1,4 @@
-﻿namespace Thoc.Application.Common.Models;
+﻿namespace Base.Application.Common.Models;
 
 public class Result
 {

@@ -1,4 +1,4 @@
-﻿namespace Thoc.Domain.Exceptions;
+﻿namespace Base.Domain.Exceptions;
 
 public class UnsupportedColourException : Exception
 {

@@ -1,6 +1,6 @@
-﻿using Thoc.Application.Common.Models;
+﻿using Base.Application.Common.Models;
 
-namespace Thoc.Application.Common.Interfaces;
+namespace Base.Application.Common.Interfaces;
 
 public interface IIdentityService
 {

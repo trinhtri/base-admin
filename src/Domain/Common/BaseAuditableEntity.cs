@@ -1,4 +1,4 @@
-﻿namespace Thoc.Domain.Common;
+﻿namespace Base.Domain.Common;
 
 public abstract class BaseAuditableEntity : BaseEntity
 {

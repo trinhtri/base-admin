@@ -1,4 +1,4 @@
-﻿namespace Thoc.Web.Infrastructure;
+﻿namespace Base.Web.Infrastructure;
 
 public abstract class EndpointGroupBase
 {
