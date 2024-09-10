@@ -82,7 +82,6 @@ app.Map("/", () => Results.Redirect("/api"));
 
 app.MapIdentityApi<ApplicationUser>();
 
-app.MapEndpoints();
 app.MapControllers();
 
 app.Run();

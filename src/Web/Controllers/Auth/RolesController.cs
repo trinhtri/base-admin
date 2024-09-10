@@ -1,5 +1,6 @@
 ﻿using Base.Application.Auth.Roles.Queries;
 using Base.Application.Common.Models;
+using Base.Application.Common.Security;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
